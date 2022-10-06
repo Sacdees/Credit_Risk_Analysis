@@ -1,7 +1,4 @@
 # Credit_Risk_Analysis
-Machine Learning
-
-# Credit_Risk_Analysis
 
 ## Analysis Overview
 Credit Risk is difficult to predict, many time the Low Risk loans far out number the High Risk loans.  In this analysis we were tasked with helping predict whether applicants are to be considered low or high risk status.  Several methods can be used by data analysis to create a model to evaluate these applicants.  In this analysis we were tasked to use Imbalanced-learn and Scikit-learn functions to evaluate the sample data.  We will evaluate the performance of these function to determine a recommendation on predicting credit risk.
