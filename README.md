@@ -6,6 +6,8 @@ Machine Learning
 ## Analysis Overview
 Credit Risk is difficult to predict, many time the Low Risk loans far out number the High Risk loans.  In this analysis we were tasked with helping predict whether applicants are to be considered low or high risk status.  Several methods can be used by data analysis to create a model to evaluate these applicants.  In this analysis we were tasked to use Imbalanced-learn and Scikit-learn functions to evaluate the sample data.  We will evaluate the performance of these function to determine a recommendation on predicting credit risk.
 
+-----------------------
+
 ## Results (Balanced Accuracy Scores, Confusion Matrixes and Imbalanced Classification Reports)
 
 ### Naive Random Ovesampling
@@ -26,32 +28,34 @@ The results are almost mirror of our first data set.<br>The balanced accuracy sc
 <p align="center">
   <img src="Resouces\undersample.png">
 </p>
-Here the balanced accuracy score is down to about 52%.<br>The high_risk precision is still 1% only with 63% sensitivity which makes a F1 of 1%.<br>Due to the high number of false positives, the low_risk sensitivity is only 40%.
+Here the balanced accuracy score is down to about 66%.<br>High Risk is 70 compared to 31<br>Resulting a similar prediction accuracy of 99%.
 <br><br>
 
-### SMOTEENN model
+### Combination Sampling / SMOTEENN
 <p align="center">
-  <img src="">
+  <img src="Resouces\combo.png">
 </p>
 The balanced accuracy score is about 62%.<br>The high_risk precision is still 1% only with 68% sensitivity which makes a F1 of only 2%.<br>Due to the high number of false positives, the low_risk sensitivity is 57%.
 <br><br>
 
+-----------------------
+
+
 ### BalancedRandomForestClassifier model
 <p align="center">
-  <img src="">
+  <img src="Resouces\brfc.png">
 </p>
-The balanced accuracy score improved to about 79%.<br>The high_risk precision is still low at 4% only with 67% sensitivity which makes a F1 of only 7%.<br>Due to a lower number of false positives, the low_risk sensitivity is now 91% with 100% presicion.
+The balanced accuracy score improved <br>High Risk Loans are still low<br> With a lower number of false positives the data is improved.
 <br><br>
 
 ### EasyEnsembleClassifier model
 <p align="center">
-  <img src="">
+  <img src="Resouces\easy.png">
 </p>
-Now, the balanced accuracy score is high to about 93%.<br>The high_risk precision is still low at 7% only with 91% sensitivity which makes a F1 of only 14%.<br>Due to a lower number of false positives, the low_risk sensitivity is now 94% with 100% presicion.
+Data set has the highest balanced accuracy.<br>Also has a lower number of false positives compared to other techniques 
 <br><br>
+ 
+ ------------------------
 
 ## Summary
-All the models used to perform the credit risk analysis show weak precision in determining if a credit risk is high.\
-The Ensemble models brought a lot more improvment specially on the sensitivity of the high risk credits.\
-The EasyEnsembleClassifier model shows a recall of 92% so it detects almost all high risk credit. On another hand, with a low precision, a lot of low risk credits are still falsely detected as high risk which would penalize the bank's credit strategy and infer on its revenue by missing those business opportunities.\
-For those reasons I would not recommend the bank to use any of these models to predict credit risk.
+Overall the models perform along very similar lines. The major differences are attributed to which amount of precision and sensitivity is wanted when evaluations for loan applicants.  While some models have improvies sensitivity for high risk loans, other models have better potential of accurately determining which of these loans are high risk.  Keep in mind that whichever direction is chosen that in general most low risk applicant will largely out weigh the high risk applications.  Because these differnt models can not undoubtedly predict a candidate risk factor, I would not recommend these sampling initiatives.  
